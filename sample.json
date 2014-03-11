@@ -1,0 +1,9 @@
+{
+"inputdir"  : "example/input/",
+"outputdir" : "example/output/",
+"outputpdf" : "example/proceedings.pdf",
+"preface"   : "example/preface.pdf",
+"pagenum"   : true,
+"template"  : "example/template.py",
+"pagesize"  : "A4"
+}
