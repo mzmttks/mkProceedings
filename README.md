@@ -11,16 +11,16 @@ mkProceedings provides the following functinos
 
 
 How To Install
-==============
+--------------
 sudo pip install pyPdf
 
 How to use
-==========
+----------
 python mkProceedings.py config.json
 
 
 Config.json format
-==================
+------------------
 
 * inputdir: All pdfs in the path will be loaded.
 * outputdir: templated & number added pdfs are stored to the path.
@@ -31,5 +31,5 @@ Config.json format
 * pagesize: A page size. A0, A1, ..., B0, ..., letter are acceptable
 
 License
-=======
+-------
 MIT
