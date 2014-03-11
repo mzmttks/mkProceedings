@@ -4,14 +4,14 @@ mkProceedings
 Organize a pdf proceedings.
 mkProceedings provides the following functinos
 
-* Add the same texts to each pages. (e.g., a conference name)
-* Merge pdfs
-* Insert preface pdf
+* Overlay text on each pages. (e.g., a conference name)
+* Merge pdfs into one page
+* Insert a pdf file at the beginning (e.g., a preface)
 * Separate the proceedings into papers.
 
 
-How To Install
---------------
+Dependent python module
+-----------------------
 sudo pip install pyPdf
 
 How to use
