@@ -4,13 +4,13 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 
-# you can specify you font 
+# you can specify your font 
 fontPath = "/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf"
 pdfmetrics.registerFont(TTFont('MyFont', fontPath))
 
 
 def template(can, localpage, globalpage):
-    """A function that generates a tempmlate pdf"""
+    """A function that generates a tempmlate pdf that is overlayed"""
     can.setFont('MyFont', 20)
 
     if localpage == 1:
@@ -23,5 +23,6 @@ def template(can, localpage, globalpage):
 
 
 def pagenum(can, localpage, globalpage):
+    """A page number, which will be overlayed for each page"""
     can.drawString(10, 10, "-%d-" % globalpage)
     return can

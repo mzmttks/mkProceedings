@@ -46,7 +46,7 @@ numpagelist = []
 pagecount = preface.numPages
 
 for pdf in glob.glob(os.path.join(config["inputdir"], "*.pdf")):
-    print "combining", pdf
+    print "Combining", pdf, "..."
 
     # read your existing PDF
     existing_pdf = PdfFileReader(file(pdf, "rb"))
@@ -73,6 +73,9 @@ for pdf in glob.glob(os.path.join(config["inputdir"], "*.pdf")):
 stream = file(config["outputpdf"], "wb")
 proceedings.write(stream)
 stream.close()
+print 
+print "Proceedings is created at"
+print "    %s" % (os.path.abspath(config["outputpdf"]))
 
 
 # separate proceedings
@@ -80,8 +83,11 @@ proc = PdfFileReader(file(config["outputpdf"], "rb"))
 for inum, numpage in enumerate(numpagelist):
     pdfobj = PdfFileWriter()
     for i in range(numpage[0], numpage[1]):
-        print i
         pdfobj.addPage(proc.getPage(i))
-    stream = file(os.path.join(config["outputdir"], "pdf%05d.pdf" % inum), "wb")
+    pdfname = os.path.join(config["outputdir"], "pdf%05d.pdf" % inum)
+    stream = file(pdfname, "wb")
     pdfobj.write(stream)
     stream.close()
+
+    print "A separated paper is created at"
+    print "    %s" % (os.path.abspath(pdfname))
